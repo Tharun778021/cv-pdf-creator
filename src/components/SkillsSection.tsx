@@ -56,7 +56,7 @@ const SkillsSection = () => {
         >
           {/* Section header */}
           <div className="text-center mb-16">
-            <span className="text-primary font-mono text-sm">04. Skills</span>
+            <span className="text-primary font-mono text-sm">05. Skills</span>
             <h2 className="text-3xl md:text-4xl font-bold mt-2">
               Technical expertise
             </h2>
