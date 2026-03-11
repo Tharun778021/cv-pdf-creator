@@ -44,7 +44,7 @@ const ContactSection = () => {
           className="max-w-4xl mx-auto text-center"
         >
           {/* Section header */}
-          <span className="text-primary font-mono text-sm">05. Contact</span>
+          <span className="text-primary font-mono text-sm">06. Contact</span>
           <h2 className="text-3xl md:text-5xl font-bold mt-2 mb-6">
             Let's work together
           </h2>
