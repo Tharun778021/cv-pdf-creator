@@ -74,7 +74,7 @@ const HeroSection = () => {
               <Mail className="w-5 h-5 text-muted-foreground group-hover:text-primary transition-colors" />
             </a>
             <a
-              href="https://linkedin.com"
+              href="https://www.linkedin.com/in/tharun-raju-5806232bb-raju-5806232bb"
               target="_blank"
               rel="noopener noreferrer"
               className="p-3 rounded-xl glass hover:bg-primary/10 transition-colors duration-300 group"
@@ -83,7 +83,7 @@ const HeroSection = () => {
               <Linkedin className="w-5 h-5 text-muted-foreground group-hover:text-primary transition-colors" />
             </a>
             <a
-              href="https://github.com"
+              href="https://github.com/Tharun778021"
               target="_blank"
               rel="noopener noreferrer"
               className="p-3 rounded-xl glass hover:bg-primary/10 transition-colors duration-300 group"

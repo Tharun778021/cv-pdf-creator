@@ -17,14 +17,14 @@ const ContactSection = () => {
     {
       icon: Linkedin,
       label: "LinkedIn",
-      value: "linkedin.com/in/tharun",
-      href: "https://linkedin.com",
+      value: "linkedin.com/in/tharun-raju-5806232bb",
+      href: "https://www.linkedin.com/in/tharun-raju-5806232bb-raju-5806232bb",
     },
     {
       icon: Github,
       label: "GitHub",
-      value: "github.com/tharun",
-      href: "https://github.com",
+      value: "github.com/Tharun778021",
+      href: "https://github.com/Tharun778021",
     },
     {
       icon: MapPin,
