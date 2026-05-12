@@ -2,6 +2,7 @@ import { motion } from "framer-motion";
 import { useInView } from "framer-motion";
 import { useRef } from "react";
 import { Brain, Cloud, Code2 } from "lucide-react";
+import profilePic from "@/assets/tharun-profile.jpeg";
 
 const AboutSection = () => {
   const ref = useRef(null);
@@ -73,11 +74,14 @@ const AboutSection = () => {
               className="relative"
             >
               <div className="aspect-square rounded-2xl bg-gradient-subtle border border-border overflow-hidden relative">
-                <div className="absolute inset-0 bg-gradient-to-br from-primary/10 to-accent/10" />
-                <div className="absolute inset-0 flex items-center justify-center">
-                  <div className="text-8xl font-bold text-gradient opacity-20">ST</div>
-                </div>
-                <div className="absolute bottom-0 left-0 right-0 p-6 bg-gradient-to-t from-background/90 to-transparent">
+                <img
+                  src={profilePic}
+                  alt="S. Tharun - CSE (AI & ML) student"
+                  className="absolute inset-0 w-full h-full object-cover"
+                  loading="lazy"
+                />
+                <div className="absolute inset-0 bg-gradient-to-br from-primary/5 to-accent/5 mix-blend-overlay" />
+                <div className="absolute bottom-0 left-0 right-0 p-6 bg-gradient-to-t from-background/95 via-background/60 to-transparent">
                   <p className="text-sm text-muted-foreground font-mono">234G1A33H6</p>
                   <p className="text-foreground font-medium">CSE (AI & ML)</p>
                 </div>
