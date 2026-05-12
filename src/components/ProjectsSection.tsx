@@ -1,6 +1,6 @@
 import { motion, useInView } from "framer-motion";
 import { useRef } from "react";
-import { Bot, Globe, MessageSquareText, Palette, FileText, Sparkles, Github, Camera, ScanLine, Cpu, Car } from "lucide-react";
+import { Bot, Globe, MessageSquareText, Palette, FileText, Sparkles, Github, Camera, ScanLine, Cpu, Car, CloudSun, CloudRain, Wind, Thermometer, LineChart, TrendingUp, BarChart3, Database, Activity } from "lucide-react";
 
 const projects = [
   {
@@ -49,6 +49,57 @@ const projects = [
     ],
     proficiency: 90,
     repo: "https://github.com/Tharun778021/licence-plate-detector",
+  },
+  {
+    icon: CloudSun,
+    tag: "Data Science Project",
+    title: "Weather Analysis",
+    subtitle: "Climate data insights & visualization",
+    description:
+      "An end-to-end weather data analysis project that explores historical climate patterns, visualizes trends across temperature, humidity, and precipitation, and uncovers actionable insights using Python data science tools.",
+    features: [
+      { icon: Thermometer, text: "Analyze temperature trends across time periods" },
+      { icon: CloudRain, text: "Study precipitation and humidity patterns" },
+      { icon: Wind, text: "Compare wind speed and seasonal variations" },
+      { icon: LineChart, text: "Visualize insights with clean, interactive charts" },
+    ],
+    skills: ["Python", "Pandas", "NumPy", "Matplotlib", "Data Visualization", "EDA"],
+    proficiency: 92,
+    repo: "https://github.com/Tharun778021/weather-analysis",
+  },
+  {
+    icon: TrendingUp,
+    tag: "Finance / Data Project",
+    title: "PE Analysis",
+    subtitle: "Price-to-Earnings ratio insights",
+    description:
+      "A data-driven analysis of stock Price-to-Earnings (PE) ratios to evaluate company valuations, identify undervalued opportunities, and benchmark sectors. Combines financial data processing with clear visual reporting.",
+    features: [
+      { icon: BarChart3, text: "Compute and compare PE ratios across companies" },
+      { icon: Database, text: "Aggregate financial data from multiple sources" },
+      { icon: Activity, text: "Benchmark sector-wise valuation trends" },
+      { icon: LineChart, text: "Visualize PE distributions for quick insights" },
+    ],
+    skills: ["Python", "Pandas", "Financial Analysis", "Data Visualization", "Statistics"],
+    proficiency: 90,
+    repo: "https://github.com/Tharun778021/pe",
+  },
+  {
+    icon: Sparkles,
+    tag: "Predictive ML Project",
+    title: "PE Future Prediction",
+    subtitle: "Forecasting future PE ratios with ML",
+    description:
+      "A machine learning project that forecasts future Price-to-Earnings (PE) ratios using historical financial data and predictive models. Helps anticipate valuation shifts and supports smarter investment decisions.",
+    features: [
+      { icon: TrendingUp, text: "Predict future PE ratios using ML models" },
+      { icon: LineChart, text: "Train regression models on historical PE data" },
+      { icon: BarChart3, text: "Evaluate model accuracy with clear metrics" },
+      { icon: Activity, text: "Visualize forecast trends vs actual values" },
+    ],
+    skills: ["Python", "Scikit-learn", "Machine Learning", "Time Series", "Pandas", "Forecasting"],
+    proficiency: 88,
+    repo: "https://github.com/Tharun778021/pe_future",
   },
 ];
 
