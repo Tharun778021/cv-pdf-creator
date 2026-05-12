@@ -11,8 +11,8 @@ const ContactSection = () => {
     {
       icon: Mail,
       label: "Email",
-      value: "tharun@example.com",
-      href: "mailto:tharun@example.com",
+      value: "tharuneukaristheraju778@gmail.com",
+      href: "mailto:tharuneukaristheraju778@gmail.com",
     },
     {
       icon: Linkedin,
@@ -64,7 +64,7 @@ const ContactSection = () => {
               size="lg"
               className="bg-gradient-primary hover:opacity-90 text-primary-foreground font-medium px-8 py-6 text-lg rounded-xl glow"
             >
-              <a href="mailto:tharun@example.com">
+              <a href="mailto:tharuneukaristheraju778@gmail.com">
                 <Send className="w-5 h-5 mr-2" />
                 Say Hello
               </a>

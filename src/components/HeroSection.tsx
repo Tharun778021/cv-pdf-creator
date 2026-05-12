@@ -67,7 +67,7 @@ const HeroSection = () => {
             className="flex items-center justify-center gap-4 mb-16"
           >
             <a
-              href="mailto:tharun@example.com"
+              href="mailto:tharuneukaristheraju778@gmail.com"
               className="p-3 rounded-xl glass hover:bg-primary/10 transition-colors duration-300 group"
               aria-label="Email"
             >
