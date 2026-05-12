@@ -1,6 +1,6 @@
 import { motion, useInView } from "framer-motion";
 import { useRef } from "react";
-import { Bot, Globe, MessageSquareText, Palette, FileText, Sparkles, Github, Camera, ScanLine, Cpu, Car } from "lucide-react";
+import { Bot, Globe, MessageSquareText, Palette, FileText, Sparkles, Github, Camera, ScanLine, Cpu, Car, CloudSun, CloudRain, Wind, Thermometer, LineChart, TrendingUp, BarChart3, Database, Activity } from "lucide-react";
 
 const projects = [
   {
