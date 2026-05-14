@@ -1,7 +1,8 @@
 import { motion } from "framer-motion";
 import { useState, useEffect } from "react";
 import { Menu, FileText } from "lucide-react";
-import { Sheet, SheetContent, SheetHeader, SheetTitle, SheetTrigger } from "@/components/ui/sheet";
+import { Sheet, SheetContent, SheetDescription, SheetHeader, SheetTitle, SheetTrigger } from "@/components/ui/sheet";
+import { Download } from "lucide-react";
 
 const Navigation = () => {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -46,6 +47,9 @@ const Navigation = () => {
                   <SheetTitle className="text-gradient text-2xl font-bold text-left">
                     S. Tharun
                   </SheetTitle>
+                  <SheetDescription className="text-left">
+                    Navigate the portfolio
+                  </SheetDescription>
                 </SheetHeader>
                 <div className="mt-8 flex flex-col gap-2">
                   {navLinks.map((link, index) => (
@@ -69,7 +73,16 @@ const Navigation = () => {
                     className="mt-4 flex items-center justify-center gap-2 px-4 py-3 text-primary border border-primary rounded-lg hover:bg-primary/10 transition-colors"
                   >
                     <FileText className="w-4 h-4" />
-                    Resume
+                    View Resume
+                  </a>
+                  <a
+                    href="/resume.pdf"
+                    download="S-Tharun-Resume.pdf"
+                    onClick={() => setIsSidebarOpen(false)}
+                    className="flex items-center justify-center gap-2 px-4 py-3 bg-primary text-primary-foreground rounded-lg hover:opacity-90 transition-opacity"
+                  >
+                    <Download className="w-4 h-4" />
+                    Download PDF
                   </a>
                 </div>
               </SheetContent>
@@ -105,6 +118,17 @@ const Navigation = () => {
               className="px-4 py-2 text-sm font-medium text-primary border border-primary rounded-lg hover:bg-primary/10 transition-colors"
             >
               Resume
+            </motion.a>
+            <motion.a
+              initial={{ opacity: 0, y: -20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.4, delay: 0.45 }}
+              href="/resume.pdf"
+              download="S-Tharun-Resume.pdf"
+              className="flex items-center gap-2 px-4 py-2 text-sm font-medium bg-primary text-primary-foreground rounded-lg hover:opacity-90 transition-opacity"
+            >
+              <Download className="w-4 h-4" />
+              Download PDF
             </motion.a>
           </div>
         </nav>
