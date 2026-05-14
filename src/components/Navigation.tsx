@@ -47,6 +47,9 @@ const Navigation = () => {
                   <SheetTitle className="text-gradient text-2xl font-bold text-left">
                     S. Tharun
                   </SheetTitle>
+                  <SheetDescription className="text-left">
+                    Navigate the portfolio
+                  </SheetDescription>
                 </SheetHeader>
                 <div className="mt-8 flex flex-col gap-2">
                   {navLinks.map((link, index) => (
