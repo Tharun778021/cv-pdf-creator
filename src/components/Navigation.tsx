@@ -73,7 +73,16 @@ const Navigation = () => {
                     className="mt-4 flex items-center justify-center gap-2 px-4 py-3 text-primary border border-primary rounded-lg hover:bg-primary/10 transition-colors"
                   >
                     <FileText className="w-4 h-4" />
-                    Resume
+                    View Resume
+                  </a>
+                  <a
+                    href="/resume.pdf"
+                    download="S-Tharun-Resume.pdf"
+                    onClick={() => setIsSidebarOpen(false)}
+                    className="flex items-center justify-center gap-2 px-4 py-3 bg-primary text-primary-foreground rounded-lg hover:opacity-90 transition-opacity"
+                  >
+                    <Download className="w-4 h-4" />
+                    Download PDF
                   </a>
                 </div>
               </SheetContent>
