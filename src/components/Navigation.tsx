@@ -130,7 +130,6 @@ const Navigation = () => {
               <Download className="w-4 h-4" />
               Download PDF
             </motion.a>
-            </motion.a>
           </div>
         </nav>
       </div>
