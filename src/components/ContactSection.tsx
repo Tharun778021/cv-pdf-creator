@@ -1,6 +1,6 @@
 import { motion, useInView } from "framer-motion";
 import { useRef } from "react";
-import { Mail, Github, Linkedin, MapPin, Send } from "lucide-react";
+import { Mail, Github, Linkedin, MapPin, Phone, Send } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
 const ContactSection = () => {
@@ -25,6 +25,12 @@ const ContactSection = () => {
       label: "GitHub",
       value: "github.com/Tharun778021",
       href: "https://github.com/Tharun778021",
+    },
+    {
+      icon: Phone,
+      label: "Phone",
+      value: "+91 93924 73635",
+      href: "tel:+919392473635",
     },
     {
       icon: MapPin,

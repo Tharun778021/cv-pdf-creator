@@ -1,16 +1,14 @@
 import { motion } from "framer-motion";
 import { useState, useEffect } from "react";
-import { Menu, X } from "lucide-react";
+import { Menu, FileText } from "lucide-react";
+import { Sheet, SheetContent, SheetHeader, SheetTitle, SheetTrigger } from "@/components/ui/sheet";
 
 const Navigation = () => {
   const [isScrolled, setIsScrolled] = useState(false);
-  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const [isSidebarOpen, setIsSidebarOpen] = useState(false);
 
   useEffect(() => {
-    const handleScroll = () => {
-      setIsScrolled(window.scrollY > 50);
-    };
-
+    const handleScroll = () => setIsScrolled(window.scrollY > 50);
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
@@ -35,12 +33,53 @@ const Navigation = () => {
     >
       <div className="container px-6">
         <nav className="flex items-center justify-between">
-          {/* Logo */}
-          <a href="#" className="text-xl font-bold text-gradient">
-            ST
-          </a>
+          <div className="flex items-center gap-3">
+            <Sheet open={isSidebarOpen} onOpenChange={setIsSidebarOpen}>
+              <SheetTrigger
+                aria-label="Open navigation"
+                className="p-2 rounded-lg text-foreground hover:bg-card/60 transition-colors"
+              >
+                <Menu className="w-6 h-6" />
+              </SheetTrigger>
+              <SheetContent side="left" className="glass border-r border-border/50 w-72">
+                <SheetHeader>
+                  <SheetTitle className="text-gradient text-2xl font-bold text-left">
+                    S. Tharun
+                  </SheetTitle>
+                </SheetHeader>
+                <div className="mt-8 flex flex-col gap-2">
+                  {navLinks.map((link, index) => (
+                    <a
+                      key={link.href}
+                      href={link.href}
+                      onClick={() => setIsSidebarOpen(false)}
+                      className="flex items-center gap-3 px-4 py-3 rounded-lg text-muted-foreground hover:text-foreground hover:bg-card/60 transition-colors"
+                    >
+                      <span className="text-primary font-mono text-xs">
+                        0{index + 1}.
+                      </span>
+                      <span className="text-base font-medium">{link.label}</span>
+                    </a>
+                  ))}
+                  <a
+                    href="/resume.pdf"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    onClick={() => setIsSidebarOpen(false)}
+                    className="mt-4 flex items-center justify-center gap-2 px-4 py-3 text-primary border border-primary rounded-lg hover:bg-primary/10 transition-colors"
+                  >
+                    <FileText className="w-4 h-4" />
+                    Resume
+                  </a>
+                </div>
+              </SheetContent>
+            </Sheet>
 
-          {/* Desktop navigation */}
+            <a href="#" className="text-xl font-bold text-gradient">
+              ST
+            </a>
+          </div>
+
           <div className="hidden md:flex items-center gap-8">
             {navLinks.map((link, index) => (
               <motion.a
@@ -68,49 +107,7 @@ const Navigation = () => {
               Resume
             </motion.a>
           </div>
-
-          {/* Mobile menu button */}
-          <button
-            onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-            className="md:hidden p-2 text-foreground"
-            aria-label="Toggle menu"
-          >
-            {isMobileMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
-          </button>
         </nav>
-
-        {/* Mobile menu */}
-        <motion.div
-          initial={false}
-          animate={{
-            height: isMobileMenuOpen ? "auto" : 0,
-            opacity: isMobileMenuOpen ? 1 : 0,
-          }}
-          transition={{ duration: 0.3 }}
-          className="md:hidden overflow-hidden"
-        >
-          <div className="py-6 flex flex-col gap-4">
-            {navLinks.map((link, index) => (
-              <a
-                key={link.href}
-                href={link.href}
-                onClick={() => setIsMobileMenuOpen(false)}
-                className="text-lg text-muted-foreground hover:text-foreground transition-colors"
-              >
-                <span className="text-primary font-mono text-sm mr-2">0{index + 1}.</span>
-                {link.label}
-              </a>
-            ))}
-            <a
-              href="/resume.pdf"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="mt-4 px-4 py-3 text-center font-medium text-primary border border-primary rounded-lg hover:bg-primary/10 transition-colors"
-            >
-              Resume
-            </a>
-          </div>
-        </motion.div>
       </div>
     </motion.header>
   );
