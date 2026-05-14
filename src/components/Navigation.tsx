@@ -135,12 +135,35 @@ const Navigation = () => {
               Download PDF
             </a>
           </div>
-          <div className="flex-1 bg-background/40">
-            <iframe
-              src="/resume.pdf#toolbar=1&view=FitH"
-              title="S. Tharun Resume"
+          <div className="flex-1 bg-background/40 overflow-hidden">
+            <object
+              data="/resume.pdf#toolbar=1&view=FitH"
+              type="application/pdf"
               className="w-full h-full"
-            />
+              aria-label="S. Tharun Resume"
+            >
+              <iframe
+                src={`https://docs.google.com/viewer?url=${encodeURIComponent(
+                  typeof window !== "undefined" ? `${window.location.origin}/resume.pdf` : "/resume.pdf"
+                )}&embedded=true`}
+                title="S. Tharun Resume"
+                className="w-full h-full"
+              />
+              <div className="flex flex-col items-center justify-center h-full gap-4 p-8 text-center">
+                <FileText className="w-12 h-12 text-primary" />
+                <p className="text-muted-foreground">
+                  Your browser can't preview PDFs inline. Download the file to view it.
+                </p>
+                <a
+                  href="/resume.pdf"
+                  download="S-Tharun-Resume.pdf"
+                  className="flex items-center gap-2 px-4 py-2 text-sm font-medium bg-gradient-primary text-primary-foreground rounded-lg hover:opacity-90 transition-opacity"
+                >
+                  <Download className="w-4 h-4" />
+                  Download PDF
+                </a>
+              </div>
+            </object>
           </div>
         </DialogContent>
       </Dialog>
