@@ -1,13 +1,11 @@
 import { motion } from "framer-motion";
 import { useState, useEffect } from "react";
-import { Menu, FileText, Download, X } from "lucide-react";
+import { Menu, FileText } from "lucide-react";
 import { Sheet, SheetContent, SheetDescription, SheetHeader, SheetTitle, SheetTrigger } from "@/components/ui/sheet";
-import { Dialog, DialogContent, DialogTitle, DialogDescription } from "@/components/ui/dialog";
 
 const Navigation = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);
-  const [isResumeOpen, setIsResumeOpen] = useState(false);
 
   useEffect(() => {
     const handleScroll = () => setIsScrolled(window.scrollY > 50);
@@ -23,11 +21,6 @@ const Navigation = () => {
     { href: "#skills", label: "Skills" },
     { href: "#contact", label: "Contact" },
   ];
-
-  const openResume = () => {
-    setIsSidebarOpen(false);
-    setIsResumeOpen(true);
-  };
 
   return (
     <>
@@ -72,13 +65,16 @@ const Navigation = () => {
                         <span className="text-base font-medium">{link.label}</span>
                       </a>
                     ))}
-                    <button
-                      onClick={openResume}
+                    <a
+                      href="/resume.pdf"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      onClick={() => setIsSidebarOpen(false)}
                       className="mt-4 flex items-center justify-center gap-2 px-4 py-3 text-primary border border-primary rounded-lg hover:bg-primary/10 transition-colors"
                     >
                       <FileText className="w-4 h-4" />
                       Resume
-                    </button>
+                    </a>
                   </div>
                 </SheetContent>
               </Sheet>
@@ -103,70 +99,21 @@ const Navigation = () => {
                   <span className="absolute -bottom-1 left-0 w-0 h-px bg-primary transition-all duration-300 group-hover:w-full" />
                 </motion.a>
               ))}
-              <motion.button
+              <motion.a
                 initial={{ opacity: 0, y: -20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.4, delay: 0.4 }}
-                onClick={openResume}
+                href="/resume.pdf"
+                target="_blank"
+                rel="noopener noreferrer"
                 className="px-4 py-2 text-sm font-medium text-primary border border-primary rounded-lg hover:bg-primary/10 transition-colors"
               >
                 Resume
-              </motion.button>
+              </motion.a>
             </div>
           </nav>
         </div>
       </motion.header>
-
-      <Dialog open={isResumeOpen} onOpenChange={setIsResumeOpen}>
-        <DialogContent className="max-w-5xl w-[95vw] h-[90vh] p-0 glass border-border/50 flex flex-col">
-          <div className="flex items-center justify-between gap-4 px-6 py-4 border-b border-border/50">
-            <div>
-              <DialogTitle className="text-lg font-semibold">Resume — S. Tharun</DialogTitle>
-              <DialogDescription className="text-xs text-muted-foreground">
-                Preview the resume below or download it as a PDF.
-              </DialogDescription>
-            </div>
-            <a
-              href="/resume.pdf"
-              download="S-Tharun-Resume.pdf"
-              className="flex items-center gap-2 px-4 py-2 text-sm font-medium bg-gradient-primary text-primary-foreground rounded-lg hover:opacity-90 transition-opacity"
-            >
-              <Download className="w-4 h-4" />
-              Download PDF
-            </a>
-          </div>
-          <div className="flex-1 bg-background/40 overflow-hidden">
-            <object
-              data="/resume.pdf#toolbar=1&view=FitH"
-              type="application/pdf"
-              className="w-full h-full"
-              aria-label="S. Tharun Resume"
-            >
-              <iframe
-                src={`https://docs.google.com/viewer?url=${encodeURIComponent(
-                  typeof window !== "undefined" ? `${window.location.origin}/resume.pdf` : "/resume.pdf"
-                )}&embedded=true`}
-                title="S. Tharun Resume"
-                className="w-full h-full"
-              />
-              <div className="flex flex-col items-center justify-center h-full gap-4 p-8 text-center">
-                <FileText className="w-12 h-12 text-primary" />
-                <p className="text-muted-foreground">
-                  Your browser can't preview PDFs inline. Download the file to view it.
-                </p>
-                <a
-                  href="/resume.pdf"
-                  download="S-Tharun-Resume.pdf"
-                  className="flex items-center gap-2 px-4 py-2 text-sm font-medium bg-gradient-primary text-primary-foreground rounded-lg hover:opacity-90 transition-opacity"
-                >
-                  <Download className="w-4 h-4" />
-                  Download PDF
-                </a>
-              </div>
-            </object>
-          </div>
-        </DialogContent>
-      </Dialog>
     </>
   );
 };
