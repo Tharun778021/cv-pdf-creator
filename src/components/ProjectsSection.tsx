@@ -70,7 +70,7 @@ const projects = [
   {
     icon: Compass,
     tag: "Web App Project",
-    title: "Talent Pathways",
+    title: "Student Talents",
     subtitle: "Career discovery & guidance platform",
     description:
       "A modern web application designed to help students and early-career professionals explore career pathways, discover relevant skills, and connect with the right opportunities. Built with a clean, responsive interface to guide users from learning to landing the right role.",
