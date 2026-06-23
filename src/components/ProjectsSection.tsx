@@ -1,6 +1,6 @@
 import { motion, useInView } from "framer-motion";
 import { useRef } from "react";
-import { Bot, Globe, MessageSquareText, Palette, FileText, Sparkles, Github, Camera, ScanLine, Cpu, Car, CloudSun, CloudRain, Wind, Thermometer, LineChart, TrendingUp, BarChart3, Database, Activity, Briefcase, GraduationCap, Users, Target, Compass } from "lucide-react";
+import { Bot, Globe, MessageSquareText, Palette, FileText, Sparkles, Github, Camera, ScanLine, Cpu, Car, CloudSun, CloudRain, Wind, Thermometer, LineChart, TrendingUp, BarChart3, Database, Activity, Briefcase, GraduationCap, Users, Target, Compass, BookOpen, CalendarDays, ShieldCheck, Landmark, NotebookPen } from "lucide-react";
 
 const projects = [
   {
@@ -91,6 +91,31 @@ const projects = [
     ],
     proficiency: 88,
     repo: "https://github.com/Tharun778021/talent-pathways-08",
+  },
+  {
+    icon: Landmark,
+    tag: "GovTech Web App",
+    title: "Smart Gov Diary",
+    subtitle: "Digital diary for government workflows",
+    description:
+      "A smart digital diary application built to streamline day-to-day government office workflows — replacing paper-based registers with a secure, searchable, and structured platform. Designed for officers to log activities, track tasks, and maintain accountable records with ease.",
+    features: [
+      { icon: NotebookPen, text: "Digitally log daily activities, meetings, and field visits" },
+      { icon: CalendarDays, text: "Organize entries by date, category, and priority" },
+      { icon: BookOpen, text: "Quickly search and retrieve past records" },
+      { icon: ShieldCheck, text: "Secure, accountable record-keeping for officials" },
+      { icon: Sparkles, text: "Clean, responsive UI built for everyday office use" },
+    ],
+    skills: [
+      "React",
+      "TypeScript",
+      "Tailwind CSS",
+      "Vite",
+      "Digital Governance",
+      "UI/UX Design",
+    ],
+    proficiency: 90,
+    repo: "https://github.com/Tharun778021/smart-gov-diary",
   },
 ];
 
