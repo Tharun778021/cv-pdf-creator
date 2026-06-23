@@ -8,6 +8,21 @@ const ExperienceSection = () => {
 
   const experiences = [
     {
+      title: "AI Skills & Prompt Engineering Intern",
+      company: "National Informatics Centre (NIC), Anantapuramu",
+      location: "Anantapuramu, Andhra Pradesh",
+      duration: "May - June 2025",
+      period: "6 weeks",
+      description: [
+        "Completed internship under the Ministry of Electronics and Information Technology (MeitY), Government of India",
+        "Gained hands-on experience in Artificial Intelligence tools and Prompt Engineering techniques",
+        "Contributed to integrating AI technologies into government workflows to improve efficiency and service delivery",
+        "Explored applications of emerging technologies in digital governance and public administration",
+        "Mentored by Bharathi Madam under the guidance of the District Informatics Officer, Anantapuramu",
+      ],
+      technologies: ["Artificial Intelligence", "Prompt Engineering", "Generative AI", "Digital Governance"],
+    },
+    {
       title: "AWS AI & ML Virtual Intern",
       company: "EduSkills Foundation",
       location: "Virtual",
