@@ -1,6 +1,6 @@
 import { motion, useInView } from "framer-motion";
 import { useRef } from "react";
-import { Bot, Globe, MessageSquareText, Palette, FileText, Sparkles, Github, Camera, ScanLine, Cpu, Car, CloudSun, CloudRain, Wind, Thermometer, LineChart, TrendingUp, BarChart3, Database, Activity } from "lucide-react";
+import { Bot, Globe, MessageSquareText, Palette, FileText, Sparkles, Github, Camera, ScanLine, Cpu, Car, CloudSun, CloudRain, Wind, Thermometer, LineChart, TrendingUp, BarChart3, Database, Activity, Briefcase, GraduationCap, Users, Target, Compass } from "lucide-react";
 
 const projects = [
   {
@@ -66,6 +66,31 @@ const projects = [
     skills: ["Python", "Pandas", "NumPy", "Matplotlib", "Data Visualization", "EDA"],
     proficiency: 92,
     repo: "https://github.com/Tharun778021/weather-analysis",
+  },
+  {
+    icon: Compass,
+    tag: "Web App Project",
+    title: "Talent Pathways",
+    subtitle: "Career discovery & guidance platform",
+    description:
+      "A modern web application designed to help students and early-career professionals explore career pathways, discover relevant skills, and connect with the right opportunities. Built with a clean, responsive interface to guide users from learning to landing the right role.",
+    features: [
+      { icon: Compass, text: "Explore curated career paths across multiple domains" },
+      { icon: GraduationCap, text: "Personalized skill and learning recommendations" },
+      { icon: Briefcase, text: "Browse internships, jobs, and growth opportunities" },
+      { icon: Target, text: "Goal-oriented roadmap for each chosen pathway" },
+      { icon: Users, text: "Clean, accessible UI for students and mentors" },
+    ],
+    skills: [
+      "React",
+      "TypeScript",
+      "Tailwind CSS",
+      "Vite",
+      "UI/UX Design",
+      "Responsive Web Apps",
+    ],
+    proficiency: 88,
+    repo: "https://github.com/Tharun778021/talent-pathways-08",
   },
 ];
 
