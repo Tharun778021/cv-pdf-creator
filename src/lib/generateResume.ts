@@ -255,8 +255,42 @@ export function generateResumePDF() {
   );
   y += 16;
 
+  // ===== Additional Information =====
+  sectionHeader("06.", "Additional Information");
+  setFont(10, "bold", DARK);
+  ensureSpace(14);
+  doc.text("Languages:", margin, y);
+  setFont(10, "normal", MUTED);
+  doc.text("Telugu (Native), English (Working)", margin + 90, y);
+  y += 14;
+  setFont(10, "bold", DARK);
+  ensureSpace(14);
+  doc.text("Hobbies:", margin, y);
+  setFont(10, "normal", MUTED);
+  doc.text("Nature Photography, Listening to music, Cooking", margin + 90, y);
+  y += 18;
+
+  setFont(11, "bold", DARK);
+  ensureSpace(14);
+  doc.text("Career Goals", margin, y);
+  y += 14;
+  bullet("Short-term: Secure an internship to apply technical skills and gain industry exposure.");
+  bullet("Long-term: Work in a reputed MNC and contribute to impactful projects while continuously learning.");
+  y += 6;
+  setFont(9, "italic", MUTED);
+  ensureSpace(14);
+  const decl = doc.splitTextToSize(
+    "Declaration: I hereby declare that the above information is correct and true as per my knowledge.  — S. Tharun",
+    contentWidth,
+  ) as string[];
+  decl.forEach((line) => {
+    ensureSpace(12);
+    doc.text(line, margin, y);
+    y += 12;
+  });
+
   // ===== Contact =====
-  sectionHeader("06.", "Contact");
+  sectionHeader("07.", "Contact");
   setFont(10, "normal", DARK);
   [
     "Email:    tharuneukaristheraju778@gmail.com",
