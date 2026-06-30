@@ -1,7 +1,8 @@
 import { motion } from "framer-motion";
 import { useState, useEffect } from "react";
-import { Menu, FileText } from "lucide-react";
+import { Menu, Download } from "lucide-react";
 import { Sheet, SheetContent, SheetDescription, SheetHeader, SheetTitle, SheetTrigger } from "@/components/ui/sheet";
+import { generateResumePDF } from "@/lib/generateResume";
 
 const Navigation = () => {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -65,16 +66,17 @@ const Navigation = () => {
                         <span className="text-base font-medium">{link.label}</span>
                       </a>
                     ))}
-                    <a
-                      href="/resume.pdf"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      onClick={() => setIsSidebarOpen(false)}
+                    <button
+                      type="button"
+                      onClick={() => {
+                        setIsSidebarOpen(false);
+                        generateResumePDF();
+                      }}
                       className="mt-4 flex items-center justify-center gap-2 px-4 py-3 text-primary border border-primary rounded-lg hover:bg-primary/10 transition-colors"
                     >
-                      <FileText className="w-4 h-4" />
-                      Resume
-                    </a>
+                      <Download className="w-4 h-4" />
+                      Download Resume (PDF)
+                    </button>
                   </div>
                 </SheetContent>
               </Sheet>
@@ -99,17 +101,17 @@ const Navigation = () => {
                   <span className="absolute -bottom-1 left-0 w-0 h-px bg-primary transition-all duration-300 group-hover:w-full" />
                 </motion.a>
               ))}
-              <motion.a
+              <motion.button
+                type="button"
                 initial={{ opacity: 0, y: -20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.4, delay: 0.4 }}
-                href="/resume.pdf"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="px-4 py-2 text-sm font-medium text-primary border border-primary rounded-lg hover:bg-primary/10 transition-colors"
+                onClick={() => generateResumePDF()}
+                className="inline-flex items-center gap-2 px-4 py-2 text-sm font-medium text-primary border border-primary rounded-lg hover:bg-primary/10 transition-colors"
               >
-                Resume
-              </motion.a>
+                <Download className="w-4 h-4" />
+                Download Resume
+              </motion.button>
             </div>
           </nav>
         </div>
